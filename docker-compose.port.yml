@@ -1,0 +1,4 @@
+services:
+  kuma:
+    ports:
+      - ${PORT}:${PORT}

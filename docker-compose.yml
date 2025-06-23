@@ -1,0 +1,17 @@
+services:
+  kuma:
+    image: louislam/uptime-kuma:1
+    container_name: ${SERVICE}
+    restart: always
+    env_file: ".env"
+    volumes:
+      - kuma:/app/data
+    networks:
+      - mariadb
+
+networks:
+  mariadb:
+    external: true
+
+volumes:
+  kuma:

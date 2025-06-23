@@ -1,0 +1,16 @@
+services:
+  kuma:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.services.${TRAEFIK_SERVICE}.loadbalancer.server.port=${TRAEFIK_PORT}"
+      - "traefik.http.routers.${TRAEFIK_SERVICE}.rule=Host(`${TRAEFIK_HOST}`)"
+      - "traefik.http.routers.${TRAEFIK_SERVICE}.service=${TRAEFIK_SERVICE}"
+      - "traefik.http.routers.${TRAEFIK_SERVICE}.entrypoints=${TRAEFIK_ENTRYPOINTS}"
+      - "${TRAEFIK_CERTRESOLVER_LABEL}"
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    external: true
