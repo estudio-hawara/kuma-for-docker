@@ -5,7 +5,7 @@
 To start using this container, start by cloning the repository:
 
 ```bash
-git clone https://github.com/hawara-es/kuma-for-docker.git
+git clone https://github.com/estudio-hawara/kuma-for-docker.git
 cd kuma-for-docker
 ```
 
